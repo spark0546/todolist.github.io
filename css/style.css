@@ -1,0 +1,357 @@
+@charset "utf-8";
+* {
+    margin:0; padding:0;
+    line-height:1;
+}
+body {
+    font-family:'Noto Sans KR', sans-serif;
+    color:#fff;
+    text-shadow:1px 1px 1px #222;
+}
+a {
+    text-decoration:none;
+    color:inherit;
+}
+li {
+    list-style:none;
+}
+.full_screen {
+    height:100vh;
+    background-color:lightskyblue;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow:hidden;
+}
+.user {
+    font-size:1.2em;
+    position:absolute;
+    top:30px;
+    left:30px;
+    color:#f2f2f2;
+}
+.user > span {
+    font-size:1.2em;
+}
+.weather {
+    position:absolute;
+    top:30px;
+    right:30px;
+    font-size:1.2em;
+    display:flex;
+    align-items:center;
+}
+.weather > img {
+    width:30px;
+}
+.todo {
+    position:absolute;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+    border-left:12px solid goldenrod;
+    max-width:300px;
+    overflow:hidden;
+    max-height:50vh;
+    overflow-y:auto;
+}
+.todo::-webkit-scrollbar {
+    width:6px;
+}
+.todo::-webkit-scrollbar-track {
+    background-color:rgba(255,255,255,.2);
+}
+.todo::-webkit-scrollbar-thumb {
+    border-radius:6px;
+    background-color:#f1f1f1;
+}
+.todo h2 {
+    padding:12px 15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+.todo ul {
+    padding:0 15px;
+}
+.todo li {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px 0;
+    border-bottom:1px solid rgba(255,255,255,.4);
+}
+.todo li:last-child {
+    border:none;
+}
+.todo span {
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    height:20px;
+}
+.todo button {
+    background-color:transparent;
+    width:30px;
+    height:30px;
+    color:#fff;
+    border:none;
+    outline:none;
+    border-radius:5px;
+    margin-left:5px;
+}
+.todo button:hover {
+    background-color:rgba(255,255,255,.4);
+    color:#222;
+    cursor:pointer;
+}
+#time {
+    position:absolute;
+    width:30vw;
+    height:32vw;
+    /* background-color:dodgerblue; */
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.clock_wrap {
+    width:30vw;
+    height:30vw;
+    /* background-color:lightblue; */
+    position:relative;
+}
+.clock_wrap > .dots {
+    width:10px;
+    margin:0 auto;
+    position:relative;
+}
+.clock_wrap > .dots > div {
+    width:10px;
+    height:10px;
+    background-color:#fff;
+    border-radius:5px;
+    position:absolute;
+    top:0;
+    left:0;
+    transform-origin:50% 15vw;
+    text-indent:-9999px;
+}
+.clock_wrap > .dots > div:nth-child(2) {
+    transform:rotate(30deg);
+}
+.clock_wrap > .dots > div:nth-child(3) {
+    transform:rotate(60deg);
+}
+.clock_wrap > .dots > div:nth-child(4) {
+    transform:rotate(90deg);
+}
+.clock_wrap > .dots > div:nth-child(5) {
+    transform:rotate(120deg);
+}
+.clock_wrap > .dots > div:nth-child(6) {
+    transform:rotate(150deg);
+}
+.clock_wrap > .dots > div:nth-child(7) {
+    transform:rotate(180deg);
+}
+.clock_wrap > .dots > div:nth-child(8) {
+    transform:rotate(210deg);
+}
+.clock_wrap > .dots > div:nth-child(9) {
+    transform:rotate(240deg);
+}
+.clock_wrap > .dots > div:nth-child(10) {
+    transform:rotate(270deg);
+}
+.clock_wrap > .dots > div:nth-child(11) {
+    transform:rotate(300deg);
+}
+.clock_wrap > .dots > div:nth-child(12) {
+    transform:rotate(330deg);
+}
+.hour {
+    width:5px;
+    height:90px;
+    background-color:#fff;
+    border:1px solid #eee;
+    position:absolute;
+    left:calc(50% - 3px);
+    top:calc(50% - 90px);
+    transform-origin:3px 90px;
+    transform:rotate(30deg);
+    border-radius:5px;
+}
+.minutes {
+    width:3px;
+    height:110px;
+    background-color:#fff;
+    border:1px solid #eee;
+    position:absolute;
+    left:50%;
+    top:calc(50% - 110px);
+    transform-origin:1.5px 110px;
+    transform:rotate(0deg);
+    border-radius:3px;
+}
+.seconds {
+    width:1px;
+    height:120px;
+    border:1px solid #eee;
+    position:absolute;
+    left:50%;
+    top:calc(50% - 120px);
+    transform-origin:1px 120px;
+    transform:rotate(120deg);
+    border-radius:2px;
+}
+.circle {
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    background-color:#fff;
+    position:absolute;
+    left:calc(50% - 10px);
+    top:calc(50% - 10px);
+}
+.hms {
+    font-size:2em;
+    text-align:center;
+    margin-top:20px;
+}
+.btns {
+    position:absolute;
+    bottom:30px;
+    left:0;
+    right:0;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+}
+.btns label {
+    margin:0 20px;
+    opacity:0.5;
+    transition:0.3s;
+    position:relative;
+    z-index:10;
+}
+.btns label:hover {
+    opacity:1;
+    cursor:pointer;
+}
+.btns input[type=checkbox] {
+    display:none;
+}
+label[for=log]::after {
+    content:"User Change";
+}
+#log:checked + label[for=log]::after {
+    content:"Cancel User Change";
+}
+.acount_wrap {
+    position:fixed;
+    top:50%;
+    left:50%;
+    bottom:50%;
+    right:50%;
+    background-color:rgba(0,0,0,.6);
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    overflow:hidden;
+    transition:0.3s;
+    border-radius:300px;
+}
+.acount_wrap > form {
+    display:flex;
+}
+.acount_wrap input[type=text] {
+    height:40px;
+    text-indent:10px;
+    font-size:22px;
+}
+.acount_wrap input:nth-child(n+2) {
+    height:40px;
+    width:100px;
+    border-radius:5px;
+    color:#fff;
+    font-size:19px;
+}
+.acount_wrap input {
+    border:none;
+    outline:none;
+    margin:0 5px;
+}
+.acount_wrap input[type=submit] {
+    background-color:rgba(101, 172, 79, .6);
+}
+.acount_wrap input[type=submit]:hover {
+    background-color:rgba(101, 172, 79, 1);
+    cursor:pointer;
+}
+.acount_wrap input[type=submit]:active {
+    background-color:rgba(101, 172, 79, .8);
+}
+#log:checked ~ .acount_wrap {
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    border-radius:0;
+}
+
+.add_wrap {
+    position:absolute;
+    bottom:50px;
+    right:30px;
+    height:45px;
+    padding-top:5px;
+    overflow:hidden;
+}
+label[for=view_input]::after {
+    content:"Add List";
+}
+#view_input:checked + label[for=view_input]::after {
+    content:"Hide Input";
+}
+.add_wrap form {
+    position:relative;
+    bottom:-50px;
+    display:flex;
+    transition:0.3s;
+}
+.add_wrap input[type=text] {
+    height:40px;
+    border:none;
+    outline:none;
+    margin-right:5px;
+    margin-left:5px;
+    text-indent:10px;
+    font-size:19px;
+    border-radius:5px;
+    background-color:rgba(255,255,255,.7)
+}
+.add_wrap input[type=text]:focus {
+    outline:2px solid rgba(101, 172, 79, .6);
+    background-color:rgba(255,255,255,1);
+}
+.add_wrap button {
+    border:none;
+    outline:none;
+    width:60px;
+    border-radius:5px;
+    background-color:rgba(101, 172, 79, .6);
+    color:#fff;
+    font-size:17px;
+}
+.add_wrap button:hover {
+    background-color:rgba(101, 172, 79, 1);
+    cursor:pointer;
+}
+.add_wrap button:active {
+    background-color:rgba(101, 172, 79, .8);
+}
+.btns #view_input:checked ~ .add_wrap > form {
+    bottom:0;
+}
